@@ -1,0 +1,45 @@
+<div *ngIf="accountDetails">
+  <div class="billPaymentRegistrationHolderMain">
+    <div class="billPaymentRegistrationHolder">
+      <form>
+        CustomerName : {{ accountDetails[0].customerName }}
+        <div class="form-group">
+          <label for="prefererredAccount1">Preferred Account 1 : </label>
+          <select
+            class="form-select form-select-lg mb-3"
+            aria-label=".form-select-lg example"
+            name="directorName"
+          >
+            <option value="">--select--</option>
+            <option *ngFor="let dir of accountDetails">
+              {{ dir.accountNumber }}
+            </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="prefererredAccount2">Preferred Account 2 : </label>
+          <select
+            class="form-select form-select-lg mb-3"
+            aria-label=".form-select-lg example"
+            name="directorName"
+          >
+            <option value="">--select--</option>
+            <option *ngFor="let dir of accountDetails">
+              {{ dir.accountNumber }}
+            </option>
+          </select>
+
+          <h3>Terms and Conditions</h3>
+          <h6>
+            I hereby declare that I have read the terms and conditions
+            completely as mentioned in the Bill Payment Agreement and I
+            unconditionally agree to abide by these terms and conditions.
+          </h6>
+        </div>
+        <button class="btn btn-success" routerLink="/activation" type="submit">I Agree</button>&nbsp;&nbsp;
+        <button class="btn btn-danger" routerLink="/login">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>
