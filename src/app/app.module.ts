@@ -14,6 +14,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BillPaymentRegistrationComponent } from './bill-payment-registration/bill-payment-registration.component';
 import { ActivationScreenComponent } from './activation-screen/activation-screen.component';
+import { BillPaymentMenuComponent } from './bill-payment-menu/bill-payment-menu.component';
+import { ManageBillersComponent } from './manage-billers/manage-billers.component';
+import { PaymentComponent } from './payment/payment.component';
+import { PaymentHistoryComponent } from './payment-history/payment-history.component';
+import { AddBillerComponent } from './add-biller/add-biller.component';
+import { ModifyBillerComponent } from './modify-biller/modify-biller.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +31,12 @@ import { ActivationScreenComponent } from './activation-screen/activation-screen
     FooterComponent,
     BillPaymentRegistrationComponent,
     ActivationScreenComponent,
+    BillPaymentMenuComponent,
+    ManageBillersComponent,
+    PaymentComponent,
+    PaymentHistoryComponent,
+    AddBillerComponent,
+    ModifyBillerComponent,
   ],
   imports: [
     BrowserModule,

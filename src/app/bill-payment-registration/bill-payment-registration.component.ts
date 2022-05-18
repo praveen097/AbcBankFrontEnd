@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Customer } from 'models/customer';
 import { AbcBankService } from '../service/abc-bank.service';
 
@@ -9,11 +10,11 @@ import { AbcBankService } from '../service/abc-bank.service';
 })
 export class BillPaymentRegistrationComponent implements OnInit {
   public customer = new Customer()
-
-  constructor(private _abcBankService:AbcBankService) { }
   public customerId:any;
   public accountDetails:any;
+  public array:any = [];
 
+  constructor(private _abcBankService:AbcBankService, private _route:Router) { }
   ngOnInit(): void {
    this.customer = new Customer(JSON.parse(localStorage.getItem("customerId")!))
 
@@ -21,9 +22,14 @@ export class BillPaymentRegistrationComponent implements OnInit {
     console.log(this.customerId);
 
     this._abcBankService.getAccountsOfCustomer(this.customer).subscribe((result) => {
-      console.log(result)
+      this.array = JSON.parse(JSON.stringify(result));
+      localStorage.setItem("accountNumber",this.array[0].accountNumber)
       this.accountDetails = result;
     })
+  }
+
+  public toActivationPage() {
+    this._route.navigate(['/activation'])
   }
 
 }

@@ -1,0 +1,80 @@
+<div *ngIf="accountDetails">
+  <div class="billPaymentRegistrationHolderMain">
+    <div class="billPaymentRegistrationHolder">
+      <form #payementForm="ngForm">
+        {{ payementForm.value | json }}
+        <div class="form-group">
+          <label for="accountNumber">Account Number : </label>
+          <select
+            (change)="getBalance()"
+            [(ngModel)]="accountSelected"
+            class="form-select form-select-lg mb-3"
+            aria-label=".form-select-lg example"
+            name="accountNumber"
+          >
+            <option
+              *ngFor="let dir of accountDetails"
+              [value]="dir.accountNumber"
+            >
+              {{ dir.accountNumber }}
+            </option>
+          </select>
+        </div>
+        <h1>{{ accountBalance }}</h1>
+          <div class="form-group">
+            <label for="accountNumber">Biller </label>
+            <select
+              (change)="getBalance()"
+              [(ngModel)]="billerSelected"
+              class="form-select form-select-lg mb-3"
+              aria-label=".form-select-lg example"
+              name="billerName"
+            >
+              <option *ngFor="let dir of biller" [value]="dir.billerName">
+                {{ dir.billerName }}
+              </option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="billAmount">Bill Amount</label>
+            <input
+              required
+              type="text"
+              class="form-control"
+              name="billAmount"
+            />
+          </div>
+
+          <div class="form-group">
+            <label for="status">Pay Now ?: </label>&nbsp;&nbsp;
+            <input
+              class="form-check-input"
+              type="radio"
+              value="active"
+              name="billerStatus"
+              id="flexRadioDefault1"
+            />
+            <label class="form-check-label" for="flexRadioDefault1"> Yes </label
+            >&nbsp;&nbsp;
+            <input
+              class="form-check-input"
+              type="radio"
+              value="inactive"
+              name="billerStatus"
+              id="flexRadioDefault1"
+            />
+            <label class="form-check-label" for="flexRadioDefault1">
+              No
+            </label>
+          </div>
+          <div class="form-group">
+            <input type="date" name="" class="input-group date">
+          </div>
+
+        <button class="btn btn-success" type="submit">I Agree</button
+        >&nbsp;&nbsp;
+        <button class="btn btn-danger" routerLink="/login">Cancel</button>
+      </form>
+    </div>
+  </div>
+</div>

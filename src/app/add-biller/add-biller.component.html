@@ -1,0 +1,95 @@
+<div class="loginHolderMain">
+  <div class="loginHolder">
+    <form #modifyBillerForm="ngForm" (ngSubmit)="insertBiller()">
+      {{ modifyBillerForm.value | json }}
+      <div class="form-group">
+        <label for="billerName">Biller Name</label>
+        <input
+          required
+          [(ngModel)]="billerModel.billerName"
+          type="text"
+          class="form-control"
+          name="billerName"
+          #billerName="ngModel"
+          [class.is-invalid]="billerName.invalid && billerName.touched"
+        />
+      </div>
+      <div class="form-group">
+        <label for="billerAddress">Address</label>
+        <input
+          required
+          [(ngModel)]="billerModel.billerAddress"
+          type="text"
+          class="form-control"
+          name="billerAddress"
+          #billerAddress="ngModel"
+          [class.is-invalid]="billerAddress.invalid && billerAddress.touched"
+        />
+      </div>
+      <div class="form-group">
+        <label for="city">City</label>
+        <input
+          required
+          [(ngModel)]="billerModel.city"
+          type="text"
+          class="form-control"
+          name="city"
+          #city="ngModel"
+          [class.is-invalid]="city.invalid && city.touched"
+        />
+      </div>
+      <div class="form-group">
+        <label for="pinCode">Pincode</label>
+        <input
+          required
+          [(ngModel)]="billerModel.pinCode"
+          type="text"
+          class="form-control"
+          name="pinCode"
+          #pinCode="ngModel"
+          [class.is-invalid]="pinCode.invalid && pinCode.touched"
+        />
+      </div>
+      <div class="form-group">
+        <label for="billerCategory">Category : </label>
+        <select
+          class="form-select form-select-lg mb-3"
+          aria-label=".form-select-lg example"
+          name="billerCategory"
+          [(ngModel)]="billerModel.billerCategory"
+        >
+          <option value="">--select--</option>
+          <option *ngFor="let category of categories">{{ category }}</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="status">Status: </label>&nbsp;&nbsp;
+        <input
+          class="form-check-input"
+          type="radio"
+          value="active"
+          name="billerStatus"
+          id="flexRadioDefault1"
+          [(ngModel)]="billerModel.billerStatus"
+        />
+        <label class="form-check-label" for="flexRadioDefault1"> Active </label
+        >&nbsp;&nbsp;
+        <input
+          class="form-check-input"
+          type="radio"
+          value="inactive"
+          name="billerStatus"
+          id="flexRadioDefault1"
+          [(ngModel)]="billerModel.billerStatus"
+        />
+        <label class="form-check-label" for="flexRadioDefault1">
+          Inactive
+        </label>
+      </div>
+      <br />
+
+      <button type="submit" class="btn btn-primary">Add Biller</button>&nbsp;
+      <button class="btn btn-primary">Back</button>
+    </form>
+  </div>
+</div>
