@@ -61,4 +61,13 @@ export class AbcBankService {
     console.log(data);
     return this._http.put("http://localhost:6715/updateDueDateByBillerId",data);
   }
+  public deletePaymentByPaymentId(data:any){
+    console.log(data);
+    return this._http.delete("http://localhost:6715/deletePaymentByPaymentId/"+data)
+  }
+  public fetchPaymentByCategoryAndStatusAndDate(data:any){
+    console.log("...............", data);
+
+    return this._http.post("http://localhost:fetchAllPaymentsByCategoryAndStatusAndDate",data)
+  }
 }

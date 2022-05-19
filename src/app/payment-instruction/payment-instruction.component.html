@@ -5,7 +5,7 @@
   <h3>Account Balance : {{accountBalance}}</h3>
   <h3>Biller Name : {{billerName}}</h3>
   <h4>Payment status: {{paymentStatus}}</h4>
-  <form (ngSubmit)="updateDueDate()">
+  <form >
     <div class="form-group" *ngIf="paymentStatus != 'paid'">
       <label for="username">Bill Amount</label>
         <input
@@ -21,11 +21,11 @@
 
     <div class="form-group" *ngIf="paymentStatus != 'paid'">
       <label for="paymentDueDate">Payment Due Date</label>
-      <input type="date" [(ngModel)]="paymentDueDate" name="paymentDueDate" class="input-group date">
+      <input type="date" [(ngModel)]="paymentDueDate" min="2022-05-19" name="paymentDueDate" class="input-group date">
     </div>
     <br>
-    <button class="btn btn-success" [disabled]="saveRecord">Save</button>&nbsp;
-    <button class="btn btn-danger" [disabled]="deleteRecord">Delete</button>&nbsp;
+    <button class="btn btn-success" [disabled]="saveRecord" (click)="updateDueDate()">Save</button>&nbsp;
+    <button class="btn btn-danger" [disabled]="deleteRecord" (click)="deletePayment()">Delete</button>&nbsp;
     <button class="btn btn-warning">cancel</button>
   </form>
 </div>
