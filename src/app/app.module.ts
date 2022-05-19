@@ -20,6 +20,7 @@ import { PaymentComponent } from './payment/payment.component';
 import { PaymentHistoryComponent } from './payment-history/payment-history.component';
 import { AddBillerComponent } from './add-biller/add-biller.component';
 import { ModifyBillerComponent } from './modify-biller/modify-biller.component';
+import { PaymentInstructionComponent } from './payment-instruction/payment-instruction.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { ModifyBillerComponent } from './modify-biller/modify-biller.component';
     PaymentHistoryComponent,
     AddBillerComponent,
     ModifyBillerComponent,
+    PaymentInstructionComponent,
   ],
   imports: [
     BrowserModule,

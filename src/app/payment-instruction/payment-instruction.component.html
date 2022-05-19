@@ -1,0 +1,31 @@
+<div >
+  <h2 style="text-align: center;">Payment Instruction Details</h2>
+  <hr>
+  <h3>Account No : {{accountNumber}}</h3>
+  <h3>Account Balance : {{accountBalance}}</h3>
+  <h3>Biller Name : {{billerName}}</h3>
+  <h4>Payment status: {{paymentStatus}}</h4>
+  <form (ngSubmit)="updateDueDate()">
+    <div class="form-group" *ngIf="paymentStatus != 'paid'">
+      <label for="username">Bill Amount</label>
+        <input
+          required
+          [(ngModel)]="billAmount"
+          type="number"
+          class="form-control"
+          name="billAmount"
+          #userName="ngModel"
+          placeholder="Enter bill amount"
+        />
+    </div>
+
+    <div class="form-group" *ngIf="paymentStatus != 'paid'">
+      <label for="paymentDueDate">Payment Due Date</label>
+      <input type="date" [(ngModel)]="paymentDueDate" name="paymentDueDate" class="input-group date">
+    </div>
+    <br>
+    <button class="btn btn-success" [disabled]="saveRecord">Save</button>&nbsp;
+    <button class="btn btn-danger" [disabled]="deleteRecord">Delete</button>&nbsp;
+    <button class="btn btn-warning">cancel</button>
+  </form>
+</div>

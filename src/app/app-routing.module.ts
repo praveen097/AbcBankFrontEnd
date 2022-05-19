@@ -9,25 +9,30 @@ import { LoginComponent } from './login/login.component';
 import { ManageBillersComponent } from './manage-billers/manage-billers.component';
 import { ModifyBillerComponent } from './modify-biller/modify-biller.component';
 import { PaymentHistoryComponent } from './payment-history/payment-history.component';
+import { PaymentInstructionComponent } from './payment-instruction/payment-instruction.component';
 import { PaymentComponent } from './payment/payment.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 
 const routes: Routes = [
-  { path:"", component:WelcomeComponent },
-  { path:"information", component:InformationComponent },
-  { path:"login", component:LoginComponent },
-  { path:"billPaymentRegistration", component:BillPaymentRegistrationComponent },
-  { path:"activation", component:ActivationScreenComponent },
-  { path:"paymentMenu", component:BillPaymentMenuComponent },
-  { path:"manageBiller", component:ManageBillersComponent },
-  { path:"makePayment", component:PaymentComponent },
-  { path:"paymentHistory", component:PaymentHistoryComponent },
-  { path:"addBiller", component:AddBillerComponent },
-  { path:"modifyBiller", component:ModifyBillerComponent}
+  { path: '', component: WelcomeComponent },
+  { path: 'information', component: InformationComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'billPaymentRegistration',
+    component: BillPaymentRegistrationComponent,
+  },
+  { path: 'activation', component: ActivationScreenComponent },
+  { path: 'paymentMenu', component: BillPaymentMenuComponent },
+  { path: 'manageBiller', component: ManageBillersComponent },
+  { path: 'makePayment', component: PaymentComponent },
+  { path: 'paymentHistory', component: PaymentHistoryComponent },
+  { path: 'addBiller', component: AddBillerComponent },
+  { path: 'modifyBiller', component: ModifyBillerComponent },
+  { path: 'paymentInstruction', component: PaymentInstructionComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}

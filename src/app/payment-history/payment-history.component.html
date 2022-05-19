@@ -1,1 +1,66 @@
-<p>payment-history works!</p>
+<div class="paymentHistoryHolderMain">
+  <div class="paymentHistoryHolder">
+    <h3 style="text-align: center">Payment History</h3>
+    <form #modifyBillerForm="ngForm" (ngSubmit)="getPaymentHistory()">
+      {{ modifyBillerForm.value | json }}
+
+      <div class="form-group">
+        <label for="billerCategory">Category : </label>
+        <select
+          class="form-select form-select-lg mb-3"
+          aria-label=".form-select-lg example"
+          name="category"
+          [(ngModel)]="categorySelected"
+        >
+          <option value="">--select--</option>
+          <option *ngFor="let category of categories">{{ category }}</option>
+        </select>
+      </div>
+      <br />
+
+      <div class="form-group">
+        <label for="status">Status : </label>
+        <select
+          class="form-select form-select-lg mb-3"
+          aria-label=".form-select-lg example"
+          name="status"
+          [(ngModel)]="statusSelected"
+        >
+          <option value="">--select--</option>
+          <option *ngFor="let status of status">{{ status }}</option>
+        </select>
+      </div>
+      <br />
+
+      <button type="submit" class="btn btn-primary">search</button>&nbsp;
+      <button class="btn btn-danger">cancel</button>
+    </form>
+    <div style="text-align: center">
+      <h1>List of Billers</h1>
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">Date</th>
+            <th scope="col">Acc No</th>
+            <th scope="col">Biller</th>
+            <th scope="col">Amount</th>
+            <th scope="col">Category</th>
+            <th scope="col">Status</th>
+            <th scope="col">Edit</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let payment of payementHistory; index as i">
+            <td>{{ payment.paymentDate }}</td>
+            <td>{{ payment.accountNumber }}</td>
+            <td>{{ payment.billerName }}</td>
+            <td>{{ payment.Amount }}</td>
+            <td>{{ payment.category }}</td>
+            <td>{{ payment.status }}</td>
+            <td><mat-icon (click)="editPayment(payment.paymentId,payment.billerName,payment.status)">edit</mat-icon></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

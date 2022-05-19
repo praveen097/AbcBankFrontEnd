@@ -62,30 +62,6 @@
           <option *ngFor="let category of categories">{{ category }}</option>
         </select>
       </div>
-      <div class="form-group">
-        <label for="status">Status: </label>&nbsp;&nbsp;
-        <input
-          class="form-check-input"
-          type="radio"
-          value="active"
-          name="billerStatus"
-          id="flexRadioDefault1"
-          [(ngModel)]="billerModel.billerStatus"
-        />
-        <label class="form-check-label" for="flexRadioDefault1"> Active </label
-        >&nbsp;&nbsp;
-        <input
-          class="form-check-input"
-          type="radio"
-          value="inactive"
-          name="billerStatus"
-          id="flexRadioDefault1"
-          [(ngModel)]="billerModel.billerStatus"
-        />
-        <label class="form-check-label" for="flexRadioDefault1">
-          Inactive
-        </label>
-      </div>
       <br />
 
       <button type="submit" class="btn btn-primary">Add Biller</button>&nbsp;

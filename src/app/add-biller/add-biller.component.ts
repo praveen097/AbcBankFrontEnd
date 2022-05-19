@@ -26,7 +26,7 @@ export class AddBillerComponent implements OnInit {
       "pinCode":this.billerModel.pinCode,
       "billerCategory":this.billerModel.billerCategory,
       "billerStatus":"active",
-      "fixedBillAmount":5000,
+      "fixedBillAmount":Math.round(Math.random() * 10000),
       "account":{
         "accountNumber": localStorage.getItem("accountNumber")
       },
