@@ -28,7 +28,7 @@ export class PaymentHistoryComponent implements OnInit {
   ngOnInit(): void {
     this.accountNumber = JSON.parse(localStorage.getItem('accountNumber')!);
     console.log(this.accountNumber);
-    
+
   }
   public editPayment(
     paymentId: number,
@@ -112,11 +112,11 @@ export class PaymentHistoryComponent implements OnInit {
                   this.toDate != null
                   ) {
         this.paymentHistoryWithCategoryAndStatus = {
-          "accountNumber": localStorage.getItem('accountNumber'),
-          "billerCategory": this.categorySelected,
-          "billPaymentStatus": this.statusSelected,
+          "accountNumber": JSON.parse(localStorage.getItem('accountNumber')!),
+          "status": this.statusSelected,
+          "category": this.categorySelected,
           "fromDate": this.fromDate,
-          "toDate": this.toDate,
+          "toDate": this.toDate
         };
         this._abcBankService
           .fetchPaymentByCategoryAndStatusAndDate(

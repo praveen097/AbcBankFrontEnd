@@ -68,6 +68,6 @@ export class AbcBankService {
   public fetchPaymentByCategoryAndStatusAndDate(data:any){
     console.log("...............", data);
 
-    return this._http.post("http://localhost:fetchAllPaymentsByCategoryAndStatusAndDate",data)
+    return this._http.post("http://localhost:6715/fetchAllPaymentsByCategoryAndStatusAndDate",data)
   }
 }
