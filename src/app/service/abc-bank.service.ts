@@ -7,8 +7,13 @@ import { UserCredentials } from 'models/user-credentials';
   providedIn: 'root'
 })
 export class AbcBankService {
+  public loggedIn:boolean = false;
 
   constructor(private _http:HttpClient) { }
+
+  public setLogInStatus(response:boolean){
+    this.loggedIn = response;
+  }
 
   public validateUser(data:UserCredentials){
     return this._http.post("http://localhost:6715/validateUser",data);

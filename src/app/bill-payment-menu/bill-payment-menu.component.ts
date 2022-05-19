@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AbcBankService } from '../service/abc-bank.service';
 
 @Component({
   selector: 'app-bill-payment-menu',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BillPaymentMenuComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _abcBankService:AbcBankService, private _route:Router) { }
 
   ngOnInit(): void {
+  }
+  public logOut() {
+    this._abcBankService.setLogInStatus(false);
+    this._route.navigate(['/login'])
   }
 
 }

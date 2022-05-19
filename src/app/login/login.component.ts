@@ -32,6 +32,7 @@ export class LoginComponent implements OnInit {
           var id = this.array['customerid'];
           localStorage.setItem("customerId",id);
           this.customerId = localStorage.getItem("customerId")
+          this._abcBankService.setLogInStatus(true);
           this._route.navigate(['billPaymentRegistration'])
         }else{
           console.log(result);
