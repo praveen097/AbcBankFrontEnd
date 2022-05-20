@@ -10,7 +10,7 @@ import { AbcBankService } from '../service/abc-bank.service';
 })
 export class AddBillerComponent implements OnInit {
   public billerModel = new Biller();
-  public categories:string[] = ["Telecom","Finance",];
+  public categories:string[] = ["Telecom","Finance","Entertainment","Food","Health","Travel","Accessories","Education"];
   billerModel1:any;
   array:any = [];
 

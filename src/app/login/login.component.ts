@@ -13,6 +13,7 @@ export class LoginComponent implements OnInit {
   oneTimePassword:number = 0;
   captcha:string = "";
   array:any = [];
+  count:number = 0;
   public customerId:any;
 
 

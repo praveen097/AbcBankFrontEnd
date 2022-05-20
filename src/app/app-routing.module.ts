@@ -22,14 +22,14 @@ const routes: Routes = [
     path: 'billPaymentRegistration', canActivate:[AuthGuard],
     component: BillPaymentRegistrationComponent,
   },
-  { path: 'activation', canActivate:[AuthGuard], component: ActivationScreenComponent },
-  { path: 'paymentMenu', canActivate:[AuthGuard], component: BillPaymentMenuComponent },
-  { path: 'manageBiller', canActivate:[AuthGuard], component: ManageBillersComponent },
-  { path: 'makePayment', canActivate:[AuthGuard], component: PaymentComponent },
-  { path: 'paymentHistory', canActivate:[AuthGuard], component: PaymentHistoryComponent },
-  { path: 'addBiller', canActivate:[AuthGuard], component: AddBillerComponent },
-  { path: 'modifyBiller', canActivate:[AuthGuard], component: ModifyBillerComponent },
-  { path: 'paymentInstruction', canActivate:[AuthGuard], component: PaymentInstructionComponent },
+  { path: 'activation', component: ActivationScreenComponent },
+  { path: 'paymentMenu', component: BillPaymentMenuComponent },
+  { path: 'manageBiller', component: ManageBillersComponent },
+  { path: 'makePayment', component: PaymentComponent },
+  { path: 'paymentHistory', component: PaymentHistoryComponent },
+  { path: 'addBiller', component: AddBillerComponent },
+  { path: 'modifyBiller', component: ModifyBillerComponent },
+  { path: 'paymentInstruction', component: PaymentInstructionComponent },
 ];
 
 @NgModule({

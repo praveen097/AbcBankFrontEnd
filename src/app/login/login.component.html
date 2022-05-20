@@ -1,7 +1,6 @@
 <div class="loginHolderMain">
   <div class="loginHolder">
     <form #loginForm="ngForm" (ngSubmit)="validateUser()">
-      {{ loginForm.value | json }}
       <div class="form-group">
         <label for="username">Email address</label>
         <input
@@ -68,8 +67,6 @@
         </h2>
       </div>
       <br />
-      {{ captcha }}
-
       <button type="submit" class="btn btn-primary">Submit</button>&nbsp;
       <button type="reset" class="btn btn-primary">Reset</button>&nbsp;
       <button (click)="toHomePage()" class="btn btn-primary">Cancel</button>

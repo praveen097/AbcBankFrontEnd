@@ -13,6 +13,8 @@ export class BillPaymentRegistrationComponent implements OnInit {
   public customerId:any;
   public accountDetails:any;
   public array:any = [];
+  public account1:string="";
+  public account2:string = "";
 
   constructor(private _abcBankService:AbcBankService, private _route:Router) { }
   ngOnInit(): void {
@@ -29,7 +31,13 @@ export class BillPaymentRegistrationComponent implements OnInit {
   }
 
   public toActivationPage() {
-    this._route.navigate(['/activation'])
+    if(this.account1 ==""){
+      alert("Please select atleast one account number to activate")
+    }else if(this.account1 == this.account2){
+      alert("Both accounts cannot be same");
+    }else{
+      this._route.navigate(['/activation'])
+    }
   }
 
 }

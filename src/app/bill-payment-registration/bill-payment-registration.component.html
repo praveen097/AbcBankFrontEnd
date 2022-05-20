@@ -1,15 +1,17 @@
-<div *ngIf="accountDetails">
+<br><div *ngIf="accountDetails">
   <div class="billPaymentRegistrationHolderMain">
     <div class="billPaymentRegistrationHolder">
       <form (ngSubmit)="toActivationPage()">
-        CustomerName : {{ accountDetails[0].customerName }}
+        <h3>CustomerName : {{ accountDetails[0].customerName }}</h3>
         <div class="form-group">
           <label for="prefererredAccount1">Preferred Account 1 : </label>
           <select required
             class="form-select form-select-lg mb-3"
             aria-label=".form-select-lg example"
-            name="directorName"
+            name="account1"
+            [(ngModel)]="account1"
           >
+          <option value="">--select--</option>
             <option *ngFor="let dir of accountDetails">
               {{ dir.accountNumber }}
             </option>
@@ -21,7 +23,8 @@
           <select
             class="form-select form-select-lg mb-3"
             aria-label=".form-select-lg example"
-            name="directorName"
+            name="account2"
+            [(ngModel)]="account2"
           >
             <option value="">--select--</option>
             <option *ngFor="let dir of accountDetails">
@@ -29,8 +32,8 @@
             </option>
           </select>
 
-          <h3>Terms and Conditions</h3>
-          <h6>
+          <h3 class="termsAndConditions">Terms and Conditions</h3>
+          <h6 class="declaration">
             I hereby declare that I have read the terms and conditions
             completely as mentioned in the Bill Payment Agreement and I
             unconditionally agree to abide by these terms and conditions.

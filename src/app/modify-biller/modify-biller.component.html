@@ -1,7 +1,6 @@
 <div class="loginHolderMain">
   <div class="loginHolder">
     <form #modifyBillerForm="ngForm" (ngSubmit)="updateBiller()">
-      {{ modifyBillerForm.value | json }}
       <div class="form-group">
         <label for="billerName">Biller Name</label>
         <input

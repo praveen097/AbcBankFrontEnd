@@ -12,7 +12,7 @@ export class ModifyBillerComponent implements OnInit {
   public billerModel = new Biller();
   public billerModel1:any;
   public billerId:any;
-  public categories:string[] = ["Telecom","Finance",];
+  public categories:string[] = ["Telecom","Finance","Entertainment","Food","Health","Travel","Accessories","Education"];
   public array:any;
   constructor(private _abcBankService:AbcBankService, private _route:Router) { }
 

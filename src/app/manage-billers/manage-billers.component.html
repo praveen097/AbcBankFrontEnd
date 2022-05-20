@@ -1,25 +1,30 @@
 <div style="text-align: center">
   <h1>List of Billers</h1>
-  <table class="table table-striped">
-    <thead>
-      <tr>
-        <th scope="col">S.No</th>
-        <th scope="col">Biller Name</th>
-        <th scope="col">Address</th>
-        <th scope="col">Category</th>
-        <th scope="col">Edit</th>
-      </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let billers of biller; index as i">
-      <td>{{ i + 1 }}</td>
-      <td>{{ billers.billerName }}</td>
-      <td>{{ billers.billerAddress }}</td>
-      <td>{{ billers.billerCategory }}</td>
-      <td><mat-icon (click)="editBiller(billers.billerId)">edit</mat-icon></td>
-    </tr>
-  </tbody>
-  </table>
-  <button class="btn btn-success" routerLink="/addBiller">Add Biller</button>&nbsp;
+  <div class="billerDetailHolder">
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">S.No</th>
+          <th scope="col">Biller Name</th>
+          <th scope="col">Address</th>
+          <th scope="col">Category</th>
+          <th scope="col">Edit</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let billers of biller; index as i">
+          <td>{{ i + 1 }}</td>
+          <td>{{ billers.billerName }}</td>
+          <td>{{ billers.billerAddress }}</td>
+          <td>{{ billers.billerCategory }}</td>
+          <td>
+            <mat-icon (click)="editBiller(billers.billerId)">edit</mat-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <button class="btn btn-success" routerLink="/addBiller">Add Biller</button
+  >&nbsp;
   <button class="btn btn-danger" routerLink="/paymentMenu">Back</button>
 </div>
